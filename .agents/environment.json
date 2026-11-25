@@ -1,0 +1,3 @@
+{
+  "install": "touch ~/.bashrc && (sed -i '/case \\$- in/,/esac/d' ~/.bashrc 2>/dev/null || true) && (grep -qxF 'export PATH=\"$HOME/.local/bin:$PATH\"' ~/.bashrc || echo 'export PATH=\"$HOME/.local/bin:$PATH\"' >> ~/.bashrc) && if [ -n \"${VIRTUAL_ENV:-}\" ]; then python3 -m pip install --no-input kaggle requests; else python3 -m pip install --user --no-input kaggle requests; fi"
+}
